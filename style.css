@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  background: #111;
-  color: white;
+  /* Fundo degradê escuro e suave */
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+  background-attachment: fixed;
+  color: #fff;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-  padding: 20px 10px;
+  padding: 40px 20px 20px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.5rem;
+  /* Animação de entrada suave no título */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Galeria em coluna (mobile first) */
@@ -16,15 +32,42 @@ h1 {
   flex-direction: column;
   align-items: center;
   scroll-snap-type: y mandatory; /* EXTRA: efeito story */
+  padding-bottom: 50px;
 }
 
-/* Imagens responsivas */
+/* Imagens responsivas e estilizadas */
 .galeria img {
-  width: 100vw;          /* ocupa toda a largura no celular */
-  max-width: 420px;      /* limita no PC/tablet */
+  width: 90vw;           /* Adapta bem em celular */
+  max-width: 450px;      /* limite no PC/tablet */
   height: auto;
   display: block;
-  margin: 0 auto 20px;
-  border-radius: 12px;
-  scroll-snap-align: start; /* EXTRA: trava no scroll */
+  margin: 0 auto 30px;
+  border-radius: 16px;
+  scroll-snap-align: center; /* centraliza na tela no scroll */
+  
+  /* Sombras suaves e borda sutil */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Transição para hover e para aparecer no scroll */
+  transition: transform 0.4s ease, opacity 0.8s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect legal apenas para dispositivos onde faz sentido (mouse) */
+@media (hover: hover) {
+  .galeria img:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* --- ESTADOS DE ANIMAÇÃO NO SCROLL --- */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
