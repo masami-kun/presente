@@ -1,19 +1,30 @@
 body {
+  margin: 0;
   background: #111;
   color: white;
   text-align: center;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
+h1 {
+  padding: 20px 10px;
+}
+
+/* Galeria em coluna (mobile first) */
 .galeria {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  scroll-snap-type: y mandatory; /* EXTRA: efeito story */
 }
 
+/* Imagens responsivas */
 .galeria img {
-  width: 90%;
-  max-width: 400px;
+  width: 100vw;          /* ocupa toda a largura no celular */
+  max-width: 420px;      /* limita no PC/tablet */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
   border-radius: 12px;
+  scroll-snap-align: start; /* EXTRA: trava no scroll */
 }
