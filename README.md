@@ -1,6 +1,6 @@
 👀 A curiosidade falou mais alto, né?
 
-> Se não fosse pros outros mexerem, o repositório não tava público 😌
+> Se não fosse pros outros verem, o repositório não tava público 😌
 
 Eu já imaginava que você ia acabar vindo parar aqui por conta do link do git.
 
